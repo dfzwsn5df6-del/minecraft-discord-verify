@@ -1,0 +1,10 @@
+discord:
+  bot-token: "PASTE_YOUR_DISCORD_BOT_TOKEN_HERE"
+  verification-channel-id: "000000000000000000"
+  code-length: 6
+
+messages:
+  already-verified: "§aDu bist bereits verifiziert."
+  verification-started: "§aEin Verifizierungscode wurde im Discord-Channel gesendet."
+  verification-success: "§aDu bist jetzt verifiziert!"
+  command-only-player: "§cDieser Befehl kann nur von Spielern ausgeführt werden."

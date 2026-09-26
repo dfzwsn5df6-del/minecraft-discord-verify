@@ -1,0 +1,11 @@
+name: MinecraftDiscordVerify
+version: 1.0.0
+main: de.yourname.verify.VerifyPlugin
+api-version: '1.20'
+commands:
+  verify:
+    description: Startet die Discord-Verifikation.
+    usage: /verify
+permissions:
+  verify.use:
+    default: true

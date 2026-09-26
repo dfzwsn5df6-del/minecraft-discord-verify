@@ -1,0 +1,52 @@
+# Minecraft Discord Verify
+
+Ein einfaches Paper/Spigot-Plugin für Minecraft mit Discord-Verifikation.
+
+## Features
+- `/verify` auf dem Minecraft-Server
+- Zufälliger Code wird im konfigurierten Discord-Channel gesendet
+- Der Discord-Bot prüft den Code in diesem Channel
+- Die Discord-Nachricht wird automatisch gelöscht
+- Der Spieler wird im Server als verifiziert markiert
+
+## Installation
+1. `mvn clean package`
+2. Die erzeugte JAR-Datei in den `plugins`-Ordner des Minecraft-Servers verschieben
+3. In `plugins/MinecraftDiscordVerify/config.yml`:
+   - `discord.bot-token` eintragen
+   - `discord.verification-channel-id` eintragen
+4. Den Bot in den Discord-Server einladen und die nötigen Rechte geben:
+   - Nachrichten senden
+   - Nachrichten verwalten
+   - Nachrichteninhalt lesen
+5. Server starten
+
+## Discord-Bot einladen
+Der Bot benötigt die Berechtigungen:
+- `Send Messages`
+- `Manage Messages`
+- `Read Message History`
+- `View Channel`
+
+## Beispiel-Workflow
+1. Spieler verwendet `/verify`
+2. Plugin erzeugt einen Code und sendet ihn in den Discord-Channel
+3. Spieler schreibt in Discord genau: `!verify 123456`
+4. Der Bot prüft den Code und entfernt die Nachricht automatisch
+5. Der Spieler bekommt im Minecraft-Server eine Bestätigung
+
+## Wichtige Hinweise
+- Das Plugin erwartet einen Paper/Spigot-Server mit Java 17.
+- Der Discord-Bot läuft direkt im Plugin und ist somit für die Verifikation zuständig.
+- Wenn du den Code genau in den Discord-Channel schickst, funktioniert die Verifikation korrekt.
+
+## Konfiguration
+```yaml
+discord:
+  bot-token: "PASTE_YOUR_DISCORD_BOT_TOKEN_HERE"
+  verification-channel-id: "000000000000000000"
+  code-length: 6
+```
+
+## Lizenz
+MIT
